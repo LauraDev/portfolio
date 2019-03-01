@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+
+@darkblue : #000000;
+@bluegrey : #000000;
+@deeporange : #CD5C5C;
+@brown : lighten(#CD5C5C, 40%);
+
+*{
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body{
+  background-color: @brown;
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+}
+
+.container{
+  padding: .5em 0;
+}
+
+.divider{
+  background-color: @deeporange;
+}
+
+h2{
+  font-size: 2.5em;
+}
+
+h4{
+  font-size: 1.75em;
+}
+
+h2 + p{
+  font-style: italic;
+}
+
+a {
+  color: @bluegrey;
+  text-decoration: underline
+}
+
+.deeporange {
+  background-color: @deeporange;
+}
+
+.bluegrey {
+  background-color: #000000;
+}
+/**************
+ * CSS header *
+ **************/
+
+header{
+  background: url('../img/texture2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding-bottom: 2em;
+
+  p{
+    font-size: 1.5em;
+  }
+
+  h1{
+    font-size: 3em;
+  }
+
+}
+
+/***********
+ * CSS nav *
+ ***********/
+
+nav{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  text-transform: uppercase;
+  background: url('../img/texture2.jpg') ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  .container, .table-of-contents{
+    padding: 0;
+  }
+  
+  ul{
+    
+    li{
+      width: 20%;
+      text-align: center;
+
+      a{
+        font-size: 1.15em;
+        text-decoration: none
+      }
+    }
+  }
+  .table-of-contents a:hover {
+    background-color: transparent;
+  }
+}
+
+/************************
+ * CSS section à propos *
+ ************************/
+
+#about{
+  #avatar{
+    padding: 0.5em;
+    border: 1px solid @bluegrey;
+    border-radius: 100%;
+  }
+
+  p{
+    padding-left: .75em;
+  }
+}
+
+/***************************
+ * CSS section compétences *
+ ***************************/
+
+#skill{
+  .material-icons{
+    color: @deeporange;
+  }
+
+  .card{
+    border: 1px solid #000;
+    border-radius: 5%;
+  }
+
+  .card-title{
+    text-align: center;
+    -webkit-text-decoration: underline @deeporange;
+            text-decoration: underline @deeporange;
+    font-style: italic;
+  }
+
+  li{
+    list-style-type: circle;
+    padding-bottom: .5em;
+  }
+
+}
+
+/**********
+ * CSS CV *
+ **********/
+
+#resume{
+  .card{
+    li{
+      list-style-type: circle;
+      padding-bottom: .5em;
+    }
+
+  .card-title{
+    -webkit-text-decoration: underline @deeporange;
+            text-decoration: underline @deeporange;
+  }
+  }
+}
+
+/***********************
+ * CSS section contact *
+ ***********************/
+
+#contact{
+
+  #messageAjax{
+    display: none;
+  }
+
+  .input-field .prefix.active {
+    color: #000;
+  }
+
+  .input-field input[type=text]:focus , .input-field input[type=email]:focus, .input-field textarea:focus{
+    border-bottom: 1px solid #000;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+
+  input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #ff0000;
+    text-align: right;
+  }
+
+  input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: #ff0000;
+    text-align: right;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: #ff0000;
+    text-align: right;
+  }
+
+  #social {
+    a{
+      color: @bluegrey;
+      padding-right: 3em;
+    }
+
+    a:hover{
+      color: @deeporange;
+      -webkit-transition: all .5s linear;
+      transition: all .5s linear;
+    }
+  }
+}
+
+
+/***************
+ * CSS footer  *
+ ***************/
+
+footer{
+
+  background: url('../img/texture2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  p{
+    margin-bottom: 0;
+  }
+
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+#mentions{
+  a{
+    color: #039be5;
+  }
+}
+/**************
+Scrollspy CSS *
+ **************/
+
+ .table-of-contents a {
+   color: #fff;
+   font-weight: normal;
+ }
+
+ .table-of-contents a.active {
+    font-weight: 900;
+    border-left: none;
+    border-bottom: 2px solid @deeporange;
+   }
+
+   .table-of-contents a:hover{
+     color: #fff;
+     border-left: none;
+     background-color: @bluegrey;
+   }
+
+/***********
+Slider CSS *
+ ***********/
+
+// indicateur slider
+.slider .indicators .indicator-item.active {
+  background-color: @bluegrey;
+}
+
+.slides img{
+  position: relative;
+}
+
+// Légende pour les photos du slider
+.slides p{
+  margin: 0;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  left: 0;
+  padding: .5em 0;
+  background-color: fadeout(#000, 35%);
+  color: #fff;
+}
+
+/***********************
+ Effet carte retournée *
+ ***********************/
+
+.flip-container {
+	-webkit-perspective: 1000px;
+	        perspective: 1000px;
+}
+	// au survol on retourne la carte
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		-webkit-transform: rotateY(180deg);
+		        transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 100%;
+	height: 480px;
+}
+
+// vitesse de retournement
+.flipper {
+	-webkit-transition: 0.6s;
+	transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
+
+	position: relative;
+}
+
+// on cache l'autre coté quand on retourne la carte
+.front, .back {
+	-webkit-backface-visibility: hidden;
+	        backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+// on place l'avant au dessus
+.front {
+	z-index: 2;
+	-webkit-transform: rotateY(0deg);
+	        transform: rotateY(0deg);
+}
+
+// l'arrière initialement caché
+.back {
+	-webkit-transform: rotateY(180deg);
+	        transform: rotateY(180deg);
+}

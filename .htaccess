@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteRule    ^en/?$    en.php    [NC,L]
+
+Options -Indexes
+ErrorDocument 404 http://www.lauradev.fr/404.php
